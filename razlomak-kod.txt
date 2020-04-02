@@ -1,0 +1,186 @@
+﻿def main():  
+    pass  
+
+  
+if __ name__ == '__ main__':  
+
+    main()  
+
+class  Razlomak(object):  
+
+
+    def __init__(self, broj nik, nazivnik):  
+
+        self._ broj nik = broj nik  
+
+        self._ nazivnik = nazivnik  
+
+
+    @property  
+
+    def broj nik(self):  
+
+         return self._ broj nik  
+
+
+    @broj nik.setter  
+
+    def broj nik(self, value):  
+
+        self._ broj nik = value  
+
+  
+    @property  
+
+    def nazivnik(self):  
+
+        return self._ nazivnik  
+
+  
+
+    @nazivnik.setter  
+
+    def nazivnik(self, value):  
+
+     self._ nazivnik = value 
+
+  
+
+    def skrati(self):  
+
+
+        nd =  1  
+
+        for i in range(1, self.broj nik+1):  
+
+            if(self.broj nik % i == 0 and self.nazivnik % i == 0):  
+
+                nd = i  
+
+                i= i +  1  
+
+  
+        return self.broj nik / nd, self.nazivnik / nd  
+
+  
+
+
+    def __ repr__(self):  
+
+        return "Razlomak("+repr(self._ broj nik) + ',' + repr(self._ nazivnik) + ")"  
+
+ 
+
+    def __str__(self):  
+
+        return 'Razlomak ' + str(self._ broj nik) + '  | ' + str(self._ nazivnik)  
+  
+
+    def __eq__(self, other):  
+
+        return self.broj nik/self.nazivnik == other.broj nik/other.nazivnik  
+
+  
+    def __ lt__(self,other):  
+
+        return self.broj nik/self.nazivnik < other.broj nik/other.nazivnik  
+
+
+    def __ le__(self,other):  
+
+        return self.broj nik/self.nazivnik <= other.broj nik/other.nazivnik  
+
+
+    def __ mul__(self,other):  
+
+        return  Razlomak(self.broj nik  * other.broj nik, self.nazivnik  * other.nazivnik)  
+
+
+    def __ mod__(self,other):  
+
+
+
+        return  Razlomak(self.broj nik  * other.nazivnik, self.nazivnik  * other.broj nik)  
+
+
+    def __add__(self,other):  
+
+        a= self.nazivnik  
+
+        b= other.nazivnik  
+
+        nv=1  
+
+        if(a<b):  
+
+            nv=a  
+
+            if(b%a == 0):  
+
+                b=b/a  
+
+            else:  
+
+                b=b  
+
+            nv=a*b  
+
+        else:  
+
+            nv=b  
+
+            if(a%b == 0):  
+
+                a=a/b  
+
+            else:  
+
+                a=a  
+
+            nv=a*b  
+
+ 
+
+        return  Razlomak(nv / self.nazivnik  * self.broj nik + nv / other.nazivnik  * other.broj nik, nv)  
+
+ 
+
+    def __sub__(self,other):  
+
+        a= self.nazivnik  
+
+        b= other.nazivnik  
+
+        nv=1  
+
+        if(a<b):  
+
+            nv=a  
+
+            if(b%a == 0):  
+
+
+                b=b/a  
+
+            else:  
+
+                b=b  
+
+            nv=a*b  
+
+        else:  
+
+            nv=b  
+
+            if(a%b == 0):  
+
+                a=a/b  
+
+            else:  
+
+                a=a  
+
+            nv=a*b  
+
+  
+        return  Razlomak (nv / self.nazivnik  * self.broj nik - nv / other.nazivnik  * other.broj nik, nv)  
